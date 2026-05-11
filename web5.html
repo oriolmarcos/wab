@@ -1,0 +1,76 @@
+
+
+<html>
+<head>
+<title>calcular velocitat</title>
+    <title>Calculadora de Velocidad</title>
+    <script>
+        function calcular() {
+            // Obtenemos los valores de los cuadros de texto
+            var distancia = document.getElementById('dist').value;
+            var tiempo = document.getElementById('tiempo').value;
+            
+            // Verificamos que no estén vacíos y calculamos
+            if (distancia > 0 && tiempo > 0) {
+                var velocidad = distancia / tiempo;
+                // Mostramos el resultado con dos decimales
+                document.getElementById('resultado').innerHTML = 
+                    "La velocidad es de: <b>" + velocidad.toFixed(2) + " km/h</b>";
+            } else {
+                alert("Por favor, introduce números mayores a cero.");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+
+    <h2>Calculadora de Velocidad Media</h2>
+    
+    <p>Distancia recorrida (en kilómetros):<br>
+    <input type="number" id="dist" placeholder=></p>
+    
+    <p>Tiempo empleado (en horas):<br>
+    <input type="number" id="tiempo" placeholder=></p>
+    
+    <button onclick="calcular()" style="padding: 10px; cursor: pointer;">
+        Calcular Velocidad
+    </button>
+
+    <p id="resultado" style="margin-top: 20px; color: blue; font-size: 1.2em;"></p>
+
+</body>
+</html>
+
+<html>
+<head>
+    <title>Conversor KM/H a MPH</title>
+    <script>
+        function convertir() {
+            // Obtenemos los km/h del cuadro de texto
+            var kmh = document.getElementById('velocidad').value;
+            
+            if (kmh >= 0) {
+                // Hacemos la conversión
+                var mph = kmh * 0.621371;
+                
+                // Mostramos el resultado
+                document.getElementById('resultado').innerHTML = 
+                    kmh + " km/h equivalen a <b>" + mph.toFixed(2) + " mph</b>";
+            } else {
+                alert("Por favor, introduce una velocidad válida.");
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#f4f4f4" style="font-family: sans-serif; text-align: center; padding: 50px;">
+
+    <h3>Conversor de Velocidad</h3>
+    <p>Introduce la velocidad en <b>km/h</b>:</p>
+    
+    <input type="number" id="velocidad" placeholder=""padding: 10px;">
+    <button onclick="convertir()" style="padding: 10px; cursor: pointer;">Convertir a Millas</button>
+
+    <p id="resultado" style="margin-top: 30px; font-size: 1.5em; color: #d32f2f;"></p>
+
+</body>
+</html>
